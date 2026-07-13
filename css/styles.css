@@ -36,7 +36,7 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; overflow-x:clip; }
 
 body{
   margin:0;
@@ -51,6 +51,7 @@ body{
   background-attachment:fixed;
   line-height:1.6;
   overflow-x:hidden;
+  overflow-x:clip;
   -webkit-font-smoothing:antialiased;
 }
 
@@ -543,9 +544,13 @@ button{ font-family:inherit; cursor:pointer; }
   .nav__links{ display:none; }
   .nav__burger{ display:flex; }
   .btn--nav{ display:none; }
-  .hero__grid{ grid-template-columns:1fr; }
-  .hero__right{ order:-1; max-width:360px; }
-  .hero__stats{ gap:1.6rem; }
+  .hero{ min-height:auto; padding-top:5.5rem; padding-bottom:2.5rem; }
+  .hero__grid{ grid-template-columns:1fr; gap:1.6rem; }
+  .hero__right{ order:2; max-width:300px; margin:.4rem auto 0; }
+  .hero__title{ margin:.3rem 0 1rem; }
+  .hero__sub{ margin-bottom:1.4rem; }
+  .hero__stats{ gap:1.2rem 1.8rem; margin-top:1.6rem; }
+  .hero__scroll{ display:none; }
   .about__grid{ grid-template-columns:1fr; }
   .about__visual{ max-width:440px; }
   .portfolio__grid{ columns:2; }
@@ -565,6 +570,13 @@ button{ font-family:inherit; cursor:pointer; }
   .booking__steps li span{ width:26px; height:26px; }
   .booking__steps li{ font-size:.72rem; }
   .section__title{ font-size:2rem; }
+  /* jokio horizontalaus judesio telefonuose */
+  .reveal[data-reveal="left"], .reveal[data-reveal="right"]{ transform:translateY(42px); }
+  /* kompaktiškesnis hero, kad mygtukas matytųsi iškart */
+  .hero{ padding-top:5rem; }
+  .hero__title{ font-size:clamp(2.3rem,9.5vw,3rem); }
+  .hero__sub{ font-size:1rem; margin-bottom:1.2rem; }
+  .hero__cta{ padding:1rem; }
 }
 
 @media (prefers-reduced-motion:reduce){
