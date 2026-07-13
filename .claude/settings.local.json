@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m http.server 8777)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8777/index.html)",
+      "Bash(node \"C:/Users/omaza/AppData/Local/Temp/claude/C--Users-omaza-OneDrive-Desktop-hair-salon/4df37e82-5d8d-431f-88f9-fbbca366dc7f/scratchpad/server.js\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8777/)",
+      "Bash(curl -s http://localhost:8777/)",
+      "Bash(ps -W)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:www.facebook.com)",
+      "Bash(mv \"SnapInsta.to_486062422_18497912491021016_1856925939686281957_n.jpg\" styling-dryer.jpg)",
+      "Bash(mv \"SnapInsta.to_487710499_18499856443021016_2421705150356791509_n.jpg\" blonde-bob.jpg)",
+      "Bash(mv \"SnapInsta.to_494907202_18506295226021016_6770715440512077843_n.jpg\" stylist-blowdry.jpg)",
+      "Bash(mv \"SnapInsta.to_495136185_18506295235021016_6042909292899495613_n.jpg\" balayage-wash.jpg)",
+      "Bash(mv \"SnapInsta.to_495238268_18506295211021016_3283785387356933657_n.jpg\" long-ombre.jpg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8777/assets/img/stylist-blowdry.jpg)",
+      "Bash(sort -k6)",
+      "Bash(mv \"484853364_9567733013270610_4300320172098837599_n.jpg\" ieva-portrait.jpg)",
+      "Bash(mv \"531269718_24413018681648799_973670397941245526_n.jpg\" foils-process.jpg)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git -c user.name=omazaliauskas -c user.email=omazaliauskas@gmail.com commit -m 'Seaside Hair Master — pajūrio plaukų studijos svetainė *)"
+    ]
+  }
+}

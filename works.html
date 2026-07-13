@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Darbai · Seaside Hair Master</title>
+  <meta name="description" content="Seaside Hair Master darbų galerija pagal kategorijas." />
+  <meta name="theme-color" content="#0F172A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav is-scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Seaside Hair Master pradžia">
+        <span class="nav__logo-text">Seaside<em>Hair&nbsp;Master</em></span>
+      </a>
+      <nav class="nav__links" aria-label="Pagrindinė navigacija">
+        <a href="index.html#about">Apie mane</a>
+        <a href="index.html#services">Paslaugos</a>
+        <a href="index.html#transform">Prieš / Po</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Kontaktai</a>
+      </nav>
+      <a href="index.html#booking" class="btn btn--nav">Rezervuoti</a>
+      <button class="nav__burger" id="burger" aria-label="Atidaryti meniu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__drawer" id="drawer">
+      <a href="index.html#about">Apie mane</a>
+      <a href="index.html#services">Paslaugos</a>
+      <a href="index.html#transform">Prieš / Po</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#contact">Kontaktai</a>
+      <a href="index.html#booking" class="btn btn--gold btn--block">Rezervuoti konsultaciją</a>
+    </div>
+  </header>
+
+  <main class="works section">
+    <a href="index.html#portfolio" class="works__back">← Grįžti į galeriją</a>
+
+    <div class="section__head">
+      <p class="eyebrow" id="worksEyebrow">Darbai</p>
+      <h1 class="section__title" id="worksTitle">Visi darbai</h1>
+      <p class="section__lead" id="worksDesc"></p>
+    </div>
+
+    <div class="works__filters" id="worksFilters" role="tablist" aria-label="Kategorijos"></div>
+
+    <div class="works__grid" id="worksGrid"></div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Darbo peržiūra">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Uždaryti">✕</button>
+    <img class="lightbox__photo" id="lightboxPhoto" alt="" />
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-copy">
+      <a href="index.html" class="foot-brand">Seaside<em>Hair Master</em></a>
+    </div>
+    <div class="foot-copy">
+      <span>© <span id="footYear">2026</span> Seaside Hair Master</span>
+      <span class="foot-copy__dot">·</span>
+      <span>Sukurta su meile pajūryje 🌊</span>
+    </div>
+  </footer>
+
+  <script src="js/gallery-data.js" defer></script>
+  <script src="js/works.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Seaside Hair Master · Pajūrio plaukų meistrystės studija</title>
+  <meta name="description" content="Seaside Hair Master · prabangi pajūrio stiliaus plaukų studija. Balajažas, spalvinimas, kirpimai ir premium priežiūra. Rezervuokite konsultaciją internetu." />
+  <meta name="theme-color" content="#0F172A" />
+
+  <meta property="og:title" content="Seaside Hair Master · Pajūrio plaukų meistrystė" />
+  <meta property="og:description" content="Prabangi pajūrio stiliaus plaukų studija. Rezervuokite konsultaciją internetu." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="lt_LT" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Seaside Hair Master pradžia">
+        <span class="nav__logo-text">Seaside<em>Hair&nbsp;Master</em></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Pagrindinė navigacija">
+        <a href="#about">Apie mane</a>
+        <a href="#services">Paslaugos</a>
+        <a href="#transform">Prieš / Po</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Kontaktai</a>
+      </nav>
+
+      <a href="#booking" class="btn btn--nav">Rezervuoti</a>
+
+      <button class="nav__burger" id="burger" aria-label="Atidaryti meniu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__drawer" id="drawer">
+      <a href="#about">Apie mane</a>
+      <a href="#services">Paslaugos</a>
+      <a href="#transform">Prieš / Po</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Kontaktai</a>
+      <a href="#booking" class="btn btn--gold btn--block">Rezervuoti konsultaciją</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="rippleCanvas" aria-hidden="true"></canvas>
+    <div class="hero__glow" aria-hidden="true"></div>
+
+    <div class="hero__grid">
+      <div class="hero__left">
+        <p class="eyebrow reveal" data-reveal="up">Pajūrio prabangos plaukų studija</p>
+        <h1 class="hero__title">
+          <span class="reveal-word">Pajūrio</span>
+          <span class="reveal-word">plaukų</span>
+          <span class="reveal-word reveal-word--accent">meistrystės</span>
+          <span class="reveal-word">menas</span>
+        </h1>
+        <p class="hero__sub reveal" data-reveal="up">
+          Rankomis tapytas balajažas, švytinčios spalvos ir individualus stilius,
+          įkvėptas jūros šviesos. Kiekviena transformacija kruopščiai sukurta tik Jums.
+        </p>
+
+        <div class="glass-card hero__cta reveal" data-reveal="up">
+          <div class="hero__cta-text">
+            <strong>Rezervuokite konsultaciją</strong>
+            <span>Vietų skaičius ribotas kiekvieną mėnesį</span>
+          </div>
+          <a href="#booking" class="btn btn--gold">Rezervuoti konsultaciją</a>
+        </div>
+
+        <ul class="hero__stats reveal" data-reveal="up" aria-label="Pasiekimai">
+          <li><b>12+</b><span>metų patirties</span></li>
+          <li><b>3&nbsp;500+</b><span>laimingų klienčių</span></li>
+          <li><b>7</b><span>tarptautiniai sertifikatai</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__media">
+          <div class="hero__media-img" role="img" aria-label="Stilingai sumodeliuoti plaukai"></div>
+          <div class="glass-card hero__media-tag">
+            <span class="dot"></span> Šiandien laisva: <b>3 vietos</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Slinkti žemyn">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about section" id="about">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Apie mane</p>
+      <h2 class="section__title">Meistrystė, gimusi prie jūros</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__visual reveal" data-reveal="left">
+        <div class="about__img about__img--back" role="img" aria-label="Meistrė darbo metu"></div>
+        <div class="about__img about__img--front" role="img" aria-label="Plaukų detalė"></div>
+        <div class="glass-card about__sign">
+          <span class="about__sign-name">Ieva Suikaitė</span>
+          <span class="about__sign-role">Vyriausioji stilistė &amp; savininkė</span>
+        </div>
+      </div>
+
+      <div class="about__text reveal" data-reveal="right">
+        <p class="fade-line">
+          Esu <strong>Ieva Suikaitė</strong>, plaukų stilistė, įsimylėjusi pajūrio šviesą ir natūralų grožį.
+          Per daugiau nei dvylika metų sukūriau savitą braižą, kuriame susilieja skandinaviškas
+          minimalizmas ir šiltas, saulės pabučiuotas spalvų žaismas.
+        </p>
+        <p class="fade-line">
+          Tobulinausi Londono ir Kopenhagos akademijose, esu sertifikuota
+          <em>balajažo</em> ir <em>premium priežiūros</em> specialistė. Tikiu, kad tobula
+          spalva prasideda ne nuo dažų, o nuo įsiklausymo į kiekvienos klientės istoriją.
+        </p>
+        <p class="fade-line">
+          Mano studijoje nėra skubos. Tik ramybė, arbata ir kruopštus darbas,
+          kurio rezultatas švyti dar ilgai po to, kai išeinate pro duris.
+        </p>
+
+        <ul class="about__badges fade-line">
+          <li>Wella Master Colorist</li>
+          <li>L'Oréal Balayage Pro</li>
+          <li>Olaplex Certified</li>
+          <li>Great Lengths Extensions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services section" id="services">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Paslaugos</p>
+      <h2 class="section__title">Paslaugų meniu</h2>
+      <p class="section__lead">Kiekviena paslauga apima konsultaciją, premium priemones ir signatūrinį stilizavimą.</p>
+    </div>
+
+    <div class="services__tabs reveal" data-reveal="up" role="tablist" aria-label="Paslaugų kategorijos">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="cuts">Precizinis kirpimas</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="color">Balajažas &amp; spalva</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="care">Priežiūra &amp; stilius</button>
+    </div>
+
+    <div class="services__panels">
+      <div class="services__list" id="servicesList"></div>
+      <div class="services__thumb" id="serviceThumb" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER — 3 SHOWCASE CARDS ============ -->
+  <section class="transform section" id="transform">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Transformacijos</p>
+      <h2 class="section__title">Prieš ir po</h2>
+      <p class="section__lead">Tikros klienčių transformacijos, sukurtos studijoje.</p>
+    </div>
+
+    <p class="showcase__hint reveal" data-reveal="up">Patempkite rankenėlę kiekvienoje kortelėje ir pamatykite pokytį.</p>
+    <div class="showcase">
+      <article class="showcase__card reveal" data-reveal="left">
+        <div class="bax" data-ba>
+          <div class="bax__after" style="background-image:url('assets/img/long-brown.jpg')"></div>
+          <div class="bax__before" style="background-image:url('assets/img/long-brown.jpg')"></div>
+          <span class="bax__badge bax__badge--before">Prieš</span>
+          <span class="bax__badge bax__badge--after">Po</span>
+          <div class="bax__handle"><span></span></div>
+        </div>
+        <div class="showcase__body">
+          <span class="showcase__tag">Priežiūra &amp; spalva</span>
+          <h3>Ilgio ir blizgesio atkūrimas</h3>
+          <p>Keratino terapija ir šiltas tonas grąžino plaukams sveiką švytėjimą.</p>
+        </div>
+      </article>
+
+      <article class="showcase__card showcase__card--tall reveal" data-reveal="up">
+        <div class="bax" data-ba>
+          <div class="bax__after" style="background-image:url('assets/img/balayage-wash.jpg')"></div>
+          <div class="bax__before" style="background-image:url('assets/img/balayage-wash.jpg')"></div>
+          <span class="bax__badge bax__badge--before">Prieš</span>
+          <span class="bax__badge bax__badge--after">Po</span>
+          <div class="bax__handle"><span></span></div>
+        </div>
+        <div class="showcase__body">
+          <span class="showcase__tag">Balajažas</span>
+          <h3>Šiltas karamelinis balajažas</h3>
+          <p>Rankomis tapyti perėjimai ir gloss tonas natūraliam saulės efektui.</p>
+        </div>
+      </article>
+
+      <article class="showcase__card reveal" data-reveal="right">
+        <div class="bax" data-ba>
+          <div class="bax__after" style="background-image:url('assets/img/blonde-closeup.jpg')"></div>
+          <div class="bax__before" style="background-image:url('assets/img/blonde-closeup.jpg')"></div>
+          <span class="bax__badge bax__badge--before">Prieš</span>
+          <span class="bax__badge bax__badge--after">Po</span>
+          <div class="bax__handle"><span></span></div>
+        </div>
+        <div class="showcase__body">
+          <span class="showcase__tag">Šviesinimas</span>
+          <h3>Perėjimas į šaltą blondą</h3>
+          <p>Sruogelės su folijomis ir perlinis tonas be geltonų atspalvių.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO — CATEGORY CAROUSEL ============ -->
+  <section class="gallery section" id="portfolio">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Portfolio</p>
+      <h2 class="section__title">Darbų galerija</h2>
+      <p class="section__lead">Pasirinkite kategoriją ir peržiūrėkite visus darbus atskirame puslapyje.</p>
+    </div>
+
+    <div class="gallery__viewport reveal" data-reveal="up">
+      <div class="gallery__track" id="galleryTrack"><!-- kategorijų kortelės (JS) --></div>
+    </div>
+
+    <div class="gallery__controls">
+      <div class="gallery__arrows">
+        <button class="gallery__arrow" id="galPrev" aria-label="Ankstesnis" disabled>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="gallery__arrow" id="galNext" aria-label="Kitas">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="gallery__dots" id="galleryDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING FUNNEL ============ -->
+  <section class="booking section" id="booking">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Rezervacija</p>
+      <h2 class="section__title">Rezervuokite konsultaciją</h2>
+      <p class="section__lead">Trys paprasti žingsniai. Vieta rezervuojama tik po sėkmingo apmokėjimo.</p>
+    </div>
+
+    <div class="glass-card booking__card reveal" data-reveal="up">
+      <ol class="booking__steps" id="bookingSteps">
+        <li class="is-active" data-step="1"><span>1</span> Jūsų informacija</li>
+        <li data-step="2"><span>2</span> Laikas</li>
+        <li data-step="3"><span>3</span> Apmokėjimas</li>
+      </ol>
+
+      <form class="booking__form" id="bookingForm" novalidate>
+        <fieldset class="booking__panel is-active" data-step="1">
+          <div class="field">
+            <label for="bName">Vardas ir pavardė *</label>
+            <input id="bName" name="name" type="text" required placeholder="Vardenė Pavardenė" autocomplete="name" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bEmail">El. paštas *</label>
+              <input id="bEmail" name="email" type="email" required placeholder="vardas@pastas.lt" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="bPhone">Telefonas *</label>
+              <input id="bPhone" name="phone" type="tel" required placeholder="+370 6XX XXXXX" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bService">Pageidaujama paslauga</label>
+            <select id="bService" name="service">
+              <option>Signatūrinis pajūrio balajažas</option>
+              <option>Precizinis kirpimas</option>
+              <option>Pilnas spalvos pakeitimas</option>
+              <option>Plaukų priauginimas</option>
+              <option>Premium priežiūra</option>
+              <option>Nesu tikra, reikia patarimo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bHistory">Plaukų istorija</label>
+            <textarea id="bHistory" name="history" rows="3" placeholder="Papasakokite apie ankstesnį dažymą, priežiūrą, pageidavimus…"></textarea>
+          </div>
+          <div class="field">
+            <label>Įkelkite 2–3 nuotraukas (nebūtina)</label>
+            <label class="dropzone" id="dropzone">
+              <input type="file" id="bFiles" accept="image/*" multiple hidden />
+              <span class="dropzone__icon">⬆</span>
+              <span>Vilkite nuotraukas čia arba <b>pasirinkite</b></span>
+              <small id="fileList">Priimami JPG / PNG, iki 3 nuotraukų</small>
+            </label>
+          </div>
+          <div class="booking__nav">
+            <span></span>
+            <button type="button" class="btn btn--gold" data-next="2">Toliau →</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="booking__panel" data-step="2">
+          <p class="booking__hint">Pasirinkite Jums patogų laiką. Kalendorius sinchronizuojamas su realiu tvarkaraščiu.</p>
+          <div class="calendar" id="calendar"></div>
+          <div class="timeslots" id="timeslots" hidden>
+            <p class="timeslots__label">Laisvi laikai <b id="slotDate">·</b></p>
+            <div class="timeslots__grid" id="slotGrid"></div>
+          </div>
+          <div class="booking__nav">
+            <button type="button" class="btn btn--ghost" data-prev="1">← Atgal</button>
+            <button type="button" class="btn btn--gold" data-next="3" id="toStep3" disabled>Toliau →</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="booking__panel" data-step="3">
+          <div class="summary" id="summary"></div>
+          <div class="field">
+            <label for="cCard">Kortelės numeris</label>
+            <div class="card-input">
+              <input id="cCard" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" />
+              <div class="card-brands"><span>VISA</span><span>MC</span><span> Pay</span><span>G Pay</span></div>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="cExp">Galioja iki</label><input id="cExp" placeholder="MM/MM" maxlength="5" /></div>
+            <div class="field"><label for="cCvc">CVC</label><input id="cCvc" inputmode="numeric" placeholder="123" maxlength="4" /></div>
+          </div>
+          <p class="booking__secure">🔒 Saugus apmokėjimas per Stripe. Vieta rezervuojama tik gavus patvirtinimą.</p>
+          <div class="booking__nav">
+            <button type="button" class="btn btn--ghost" data-prev="2">← Atgal</button>
+            <button type="submit" class="btn btn--gold">Patvirtinti ir apmokėti · 50 €</button>
+          </div>
+        </fieldset>
+
+        <div class="booking__success" id="bookingSuccess" hidden>
+          <div class="booking__success-mark">✓</div>
+          <h3>Rezervacija patvirtinta!</h3>
+          <p>Ačiū! Netrukus gausite patvirtinimą el. paštu su visa informacija.<br>Iki greito pasimatymo studijoje 🌊</p>
+        </div>
+      </form>
+    </div>
+    <p class="booking__disclaimer">Demonstracinė forma. Realus apmokėjimas ir kalendorius integruojami per Stripe bei Cal.com API.</p>
+  </section>
+
+  <!-- ============ CONTACT + MAP ============ -->
+  <section class="contact section" id="contact">
+    <div class="section__head reveal" data-reveal="up">
+      <p class="eyebrow">Kontaktai</p>
+      <h2 class="section__title">Kur mus rasti</h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__info glass-card reveal" data-reveal="left">
+        <div class="contact__row">
+          <span class="contact__ico">📍</span>
+          <div><b>Studija</b><p>Naglių g. 12, Palanga, Lietuva</p></div>
+        </div>
+        <div class="contact__row">
+          <span class="contact__ico">📞</span>
+          <div><b>Telefonas</b><p><a href="tel:+37060000000">+370 600 00000</a></p></div>
+        </div>
+        <div class="contact__row">
+          <span class="contact__ico">✉️</span>
+          <div><b>El. paštas</b><p><a href="mailto:studija@seasidehair.lt">studija@seasidehair.lt</a></p></div>
+        </div>
+        <div class="contact__row">
+          <span class="contact__ico">🕑</span>
+          <div>
+            <b>Darbo laikas</b>
+            <ul class="contact__hours">
+              <li><span>Pr–Pn</span><b>9:00 – 19:00</b></li>
+              <li><span>Šeštadienis</span><b>10:00 – 16:00</b></li>
+              <li><span>Sekmadienis</span><b>Nedirbame</b></li>
+            </ul>
+          </div>
+        </div>
+        <a href="#booking" class="btn btn--gold btn--block">Rezervuoti konsultaciją</a>
+      </div>
+
+      <div class="contact__map reveal" data-reveal="right">
+        <iframe
+          title="Seaside Hair Master žemėlapis"
+          src="https://www.google.com/maps?q=Nagli%C5%B3%20g.%2012,%20Palanga,%20Lietuva&z=14&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="foot-intro">
+      <a href="#hero" class="foot-brand">Seaside<em>Hair Master</em></a>
+      <p class="foot-about">
+        Sveiki atvykę į Seaside Hair Master, kur pajūrio ramybė susitinka su plaukų meistryste.
+        Kuriu unikalias transformacijas, kuriose susilieja natūralus grožis ir subtili prabanga.
+        Tikiu kokybe, o ne kiekybe: dirbdama viena, kiekvienai klientei skiriu visą savo dėmesį,
+        laiką ir įkvėpimą. Mano tikslas, kad išeidamos jaustumėtės pačios gražiausios versijos.
+      </p>
+    </div>
+
+    <div class="foot-rule"></div>
+
+    <nav class="foot-links" aria-label="Poraštės navigacija">
+      <ul>
+        <li class="foot-links__h">Studija</li>
+        <li><a href="#about">Apie mane</a></li>
+        <li><a href="#services">Paslaugos</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#booking">Rezervacija</a></li>
+      </ul>
+      <ul>
+        <li class="foot-links__h">Paslaugos</li>
+        <li><a href="#services">Kirpimai</a></li>
+        <li><a href="#services">Balajažas ir spalva</a></li>
+        <li><a href="#services">Priežiūra</a></li>
+        <li><a href="#services">Stilizavimas</a></li>
+      </ul>
+      <ul>
+        <li class="foot-links__h">Darbai</li>
+        <li><a href="works.html?cat=visi">Visi darbai</a></li>
+        <li><a href="works.html?cat=sviesus">Šviesūs</a></li>
+        <li><a href="works.html?cat=balayage">Balajažas</a></li>
+        <li><a href="works.html?cat=stilizavimas">Stilizavimas</a></li>
+      </ul>
+      <ul>
+        <li class="foot-links__h">Kontaktai</li>
+        <li><a href="tel:+37060000000">+370 600 00000</a></li>
+        <li><a href="mailto:studija@seasidehair.lt">studija@seasidehair.lt</a></li>
+        <li><a href="#contact">Naglių g. 12, Palanga</a></li>
+        <li><a href="https://www.instagram.com/seaside_hair_master" target="_blank" rel="noreferrer">Instagram</a></li>
+      </ul>
+    </nav>
+
+    <div class="foot-rule"></div>
+
+    <div class="foot-social-row">
+      <div class="foot-socials">
+        <a class="foot-ico" href="mailto:studija@seasidehair.lt" aria-label="El. paštas">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+        <a class="foot-ico" href="tel:+37060000000" aria-label="Telefonas">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 11.5a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+        </a>
+        <a class="foot-ico" href="https://www.instagram.com/seaside_hair_master" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="foot-ico" href="https://www.facebook.com/ieva.suikaite" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a class="foot-ico" href="#" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4 5 4"/></svg>
+        </a>
+      </div>
+
+      <button class="foot-top" id="footTop" type="button" aria-label="Į viršų">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </button>
+    </div>
+
+    <div class="foot-copy">
+      <span>© <span id="footYear">2026</span> Seaside Hair Master</span>
+      <span class="foot-copy__dot">·</span>
+      <span>Sukurta su meile pajūryje 🌊</span>
+    </div>
+  </footer>
+
+  <script src="js/gallery-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
