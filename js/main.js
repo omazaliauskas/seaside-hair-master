@@ -104,6 +104,25 @@
   }
 
   /* =======================================================
+     HERO — mobiliojo fono parallax efektas
+     ======================================================= */
+  const heroBg = $("#heroBg");
+  if (heroBg) {
+    const mq = window.matchMedia("(max-width:960px)");
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      if (reduceMotion || !mq.matches) { heroBg.style.transform = ""; return; }
+      heroBg.style.transform = `translate3d(0, ${window.scrollY * 0.35}px, 0)`;
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    if (mq.addEventListener) mq.addEventListener("change", update);
+    update();
+  }
+
+  /* =======================================================
      PARTICLES — subtilus judantis fonas
      ======================================================= */
   const pcanvas = $("#particles");

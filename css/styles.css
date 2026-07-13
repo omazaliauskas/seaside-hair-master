@@ -186,6 +186,7 @@ button{ font-family:inherit; cursor:pointer; }
   position:relative; min-height:100svh; display:flex; align-items:center;
   padding:7rem clamp(1.2rem,4vw,2rem) 4rem; overflow:hidden; z-index:2;
 }
+.hero__bg{ display:none; }
 .hero__canvas{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
 .hero__glow{
   position:absolute; z-index:0; inset:0; pointer-events:none;
@@ -544,13 +545,21 @@ button{ font-family:inherit; cursor:pointer; }
   .nav__links{ display:none; }
   .nav__burger{ display:flex; }
   .btn--nav{ display:none; }
-  .hero{ min-height:auto; padding-top:5.5rem; padding-bottom:2.5rem; }
+  .hero{ min-height:90svh; padding-top:6rem; padding-bottom:3rem; text-align:center; }
+  .hero__bg{
+    display:block; position:absolute; top:-12%; left:0; right:0; height:124%; z-index:0;
+    background:
+      linear-gradient(rgba(15,23,42,.52), rgba(15,23,42,.82) 68%, rgba(15,23,42,.96)),
+      url("../assets/img/ieva-portrait.jpg") center 12% / cover no-repeat;
+    will-change:transform;
+  }
   .hero__grid{ grid-template-columns:1fr; gap:1.6rem; }
-  .hero__right{ order:2; max-width:300px; margin:.4rem auto 0; }
+  .hero__left{ text-align:center; }
+  .hero__right{ display:none; }
   .hero__title{ margin:.3rem 0 1rem; }
-  .hero__sub{ margin-bottom:1.4rem; }
-  .hero__stats{ gap:1.2rem 1.8rem; margin-top:1.6rem; }
-  .hero__scroll{ display:none; }
+  .hero__sub{ margin:0 auto 1.4rem; }
+  .hero__cta{ margin-left:auto; margin-right:auto; }
+  .hero__stats{ justify-content:center; gap:1.2rem 1.8rem; margin-top:1.8rem; }
   .about__grid{ grid-template-columns:1fr; }
   .about__visual{ max-width:440px; }
   .portfolio__grid{ columns:2; }
