@@ -15,20 +15,7 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  const burger = $("#burger");
-  const drawer = $("#drawer");
-  burger.addEventListener("click", () => {
-    const open = drawer.classList.toggle("is-open");
-    burger.classList.toggle("is-open", open);
-    burger.setAttribute("aria-expanded", open);
-  });
-  $$("#drawer a").forEach((a) =>
-    a.addEventListener("click", () => {
-      drawer.classList.remove("is-open");
-      burger.classList.remove("is-open");
-      burger.setAttribute("aria-expanded", "false");
-    })
-  );
+  /* Mobilųjį meniu tvarko js/menu.js */
 
   /* =======================================================
      REVEAL — dvikryptė slenkanti animacija (aukštyn / žemyn)

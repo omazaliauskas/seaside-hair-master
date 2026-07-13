@@ -75,14 +75,7 @@
   lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
   window.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 
-  /* ---- burger ---- */
-  const burger = $("#burger");
-  const drawer = $("#drawer");
-  burger.addEventListener("click", () => {
-    const open = drawer.classList.toggle("is-open");
-    burger.classList.toggle("is-open", open);
-    burger.setAttribute("aria-expanded", open);
-  });
+  /* Mobilųjį meniu tvarko js/menu.js */
 
   $("#footYear").textContent = new Date().getFullYear();
 })();

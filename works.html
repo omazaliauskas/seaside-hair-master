@@ -29,19 +29,45 @@
         <a href="index.html#contact">Kontaktai</a>
       </nav>
       <a href="index.html#booking" class="btn btn--nav">Rezervuoti</a>
-      <button class="nav__burger" id="burger" aria-label="Atidaryti meniu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button class="sm-toggle" id="smToggle" type="button" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="smPanel">
+        <span class="sm-toggle-textWrap"><span class="sm-toggle-textInner">
+          <span class="sm-toggle-line">Meniu</span>
+          <span class="sm-toggle-line">Uždaryti</span>
+        </span></span>
+        <span class="sm-icon" aria-hidden="true">
+          <span class="sm-icon-line"></span>
+          <span class="sm-icon-line sm-icon-line-v"></span>
+        </span>
       </button>
     </div>
-    <div class="nav__drawer" id="drawer">
-      <a href="index.html#about">Apie mane</a>
-      <a href="index.html#services">Paslaugos</a>
-      <a href="index.html#transform">Prieš / Po</a>
-      <a href="index.html#portfolio">Portfolio</a>
-      <a href="index.html#contact">Kontaktai</a>
-      <a href="index.html#booking" class="btn btn--gold btn--block">Rezervuoti konsultaciją</a>
-    </div>
   </header>
+
+  <!-- ============ STAGGERED MOBILE MENU ============ -->
+  <div class="sm-menu" id="staggeredMenu" aria-hidden="true">
+    <div class="sm-prelayers" aria-hidden="true">
+      <div class="sm-prelayer" style="background:#4b3f7a"></div>
+      <div class="sm-prelayer" style="background:#c9a86e"></div>
+    </div>
+    <aside class="sm-panel" id="smPanel" aria-hidden="true" aria-label="Meniu">
+      <div class="sm-panel-inner">
+        <ul class="sm-panel-list" data-numbering>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#about"><span class="sm-panel-itemLabel">Apie mane</span></a></li>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#services"><span class="sm-panel-itemLabel">Paslaugos</span></a></li>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#transform"><span class="sm-panel-itemLabel">Prieš / Po</span></a></li>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#portfolio"><span class="sm-panel-itemLabel">Portfolio</span></a></li>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#contact"><span class="sm-panel-itemLabel">Kontaktai</span></a></li>
+          <li class="sm-panel-itemWrap"><a class="sm-panel-item" href="index.html#booking"><span class="sm-panel-itemLabel">Rezervuoti</span></a></li>
+        </ul>
+        <div class="sm-socials" aria-label="Socialiniai tinklai">
+          <h3 class="sm-socials-title">Sekite</h3>
+          <ul class="sm-socials-list">
+            <li class="sm-socials-item"><a class="sm-socials-link" href="https://www.instagram.com/seaside_hair_master" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li class="sm-socials-item"><a class="sm-socials-link" href="https://www.facebook.com/ieva.suikaite" target="_blank" rel="noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
 
   <main class="works section">
     <a href="index.html#portfolio" class="works__back">← Grįžti į galeriją</a>
@@ -75,6 +101,7 @@
   </footer>
 
   <script src="js/gallery-data.js" defer></script>
+  <script src="js/menu.js" defer></script>
   <script src="js/works.js" defer></script>
 </body>
 </html>
