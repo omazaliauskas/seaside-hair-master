@@ -49,42 +49,80 @@
    ========================================================= */
 (function () {
   "use strict";
-  const layers = [document.getElementById("bgVideo"), document.getElementById("bgVideo2")].filter(Boolean);
-  if (!layers.length) return;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const bands = [...document.querySelectorAll(".vband__media")];
+  if (!bands.length) return;
 
+  const mqMobile = window.matchMedia("(max-width:960px)");
   const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
   const CROSS = 0.9; // sekundžių persiliejimas prieš pabaigą
-  let active = 0;
 
-  play(layers[0]);
+  bands.forEach((band) => {
+    const layers = [...band.querySelectorAll(".vband__layer")];
+    if (!layers.length) return;
+    let active = 0;
 
-  if (layers.length < 2) {
-    layers[0].loop = true;
-  } else {
+    function applySource() {
+      const src = mqMobile.matches ? band.dataset.mob : band.dataset.desk;
+      if (!src) return;
+      layers.forEach((v) => {
+        if (v.getAttribute("src") !== src) { v.setAttribute("src", src); v.load(); }
+      });
+      if (band.dataset.poster) layers[0].setAttribute("poster", band.dataset.poster);
+      active = 0;
+      layers.forEach((v, i) => v.classList.toggle("is-active", i === 0));
+      play(layers[0]);
+    }
+
+    let inView = true;
+
     layers.forEach((v, idx) => {
+      // Persiliejimas (crossfade) prieš kartojant
       v.addEventListener("timeupdate", () => {
-        if (idx !== active) return;
+        if (idx !== active || layers.length < 2) return;
         if (v.duration && v.currentTime >= v.duration - CROSS) {
           const next = (active + 1) % layers.length;
           const nv = layers[next];
           try { nv.currentTime = 0; } catch (e) {}
           play(nv);
-          nv.classList.add("is-active");   // persilieja (opacity transition)
+          nv.classList.add("is-active");
           v.classList.remove("is-active");
           active = next;
         }
       });
+      v.addEventListener("canplay", () => {
+        if (inView && v.classList.contains("is-active")) play(v);
+      });
+      // Atsarginis variantas: jei baigėsi be persiliejimo — paleisti iš naujo
+      v.addEventListener("ended", () => {
+        if (!v.classList.contains("is-active")) return;
+        try { v.currentTime = 0; } catch (e) {}
+        if (inView) play(v);
+      });
+      // Jei dekodavimas nepavyko — grįžti prie paprasto kartojimo
+      v.addEventListener("error", () => {
+        v.loop = true;
+        try { v.load(); } catch (e) {}
+        if (inView && v.classList.contains("is-active")) play(v);
+      });
     });
-  }
 
-  // Visada groti (grįžus į skirtuką ir pan.)
-  const ensure = () => { if (!document.hidden) play(layers[active]); };
-  document.addEventListener("visibilitychange", ensure);
-  window.addEventListener("pageshow", ensure);
-  layers.forEach((v) => v.addEventListener("canplay", () => {
-    if (v.classList.contains("is-active")) play(v);
-  }));
+    applySource();
+    if (mqMobile.addEventListener) mqMobile.addEventListener("change", applySource);
 
-  // Parallax nenaudojamas: video slenka kartu su puslapiu
+    // Groja tik matoma juosta — taupo resursus ir išvengia dekoderio perkrovos
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          inView = e.isIntersecting;
+          if (inView) play(layers[active]);
+          else layers.forEach((v) => { try { v.pause(); } catch (err) {} });
+        });
+      }, { rootMargin: "200px 0px" }).observe(band);
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && inView) play(layers[active]);
+    });
+    window.addEventListener("pageshow", () => { if (inView) play(layers[active]); });
+  });
 })();

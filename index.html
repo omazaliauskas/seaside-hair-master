@@ -20,18 +20,6 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
-  <!-- ============ FONO VIDEO (visos svetainės fonas) ============ -->
-  <div class="bg-video" aria-hidden="true">
-    <video class="bg-video__layer is-active" id="bgVideo" muted playsinline preload="auto" poster="assets/video/bg-poster.jpg">
-      <source src="assets/video/bg.mp4" type="video/mp4" />
-    </video>
-    <video class="bg-video__layer" id="bgVideo2" muted playsinline preload="auto">
-      <source src="assets/video/bg.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="bg-video-overlay" aria-hidden="true"></div>
-
-  <canvas class="particles" id="particles" aria-hidden="true"></canvas>
   <div class="page-noise" aria-hidden="true"></div>
 
   <!-- ============ NAVIGATION ============ -->
@@ -90,6 +78,17 @@
       </div>
     </aside>
   </div>
+
+  <!-- ============ VIDEO JUOSTA 1: hero + apie mane ============ -->
+  <div class="vband">
+    <div class="vband__media" aria-hidden="true"
+         data-desk="assets/video/bg-hero-about.mp4"
+         data-mob="assets/video/bg-mobile.mp4"
+         data-poster="assets/video/poster-hero.jpg">
+      <video class="vband__layer is-active" muted playsinline preload="auto"></video>
+      <video class="vband__layer" muted playsinline preload="auto"></video>
+      <div class="vband__overlay"></div>
+    </div>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
@@ -175,6 +174,7 @@
       </div>
     </div>
   </section>
+  </div><!-- /vband 1 -->
 
   <!-- ============ SERVICES ============ -->
   <section class="services section" id="services">
@@ -194,6 +194,17 @@
       <div class="services__list" id="servicesList"></div>
     </div>
   </section>
+
+  <!-- ============ VIDEO JUOSTA 2: prieš/po + portfolio ============ -->
+  <div class="vband">
+    <div class="vband__media" aria-hidden="true"
+         data-desk="assets/video/bg-works.mp4"
+         data-mob="assets/video/bg-mobile.mp4"
+         data-poster="assets/video/poster-works.jpg">
+      <video class="vband__layer is-active" muted playsinline preload="auto"></video>
+      <video class="vband__layer" muted playsinline preload="auto"></video>
+      <div class="vband__overlay"></div>
+    </div>
 
   <!-- ============ BEFORE / AFTER — 3 SHOWCASE CARDS ============ -->
   <section class="transform section" id="transform">
@@ -276,6 +287,7 @@
       <div class="gallery__dots" id="galleryDots"></div>
     </div>
   </section>
+  </div><!-- /vband 2 -->
 
   <!-- ============ BOOKING FUNNEL ============ -->
   <section class="booking section" id="booking">

@@ -92,45 +92,7 @@
 
   /* Hero mobiliojo fono parallax pašalintas — nuotrauka statiška */
 
-  /* =======================================================
-     PARTICLES — subtilus judantis fonas
-     ======================================================= */
-  const pcanvas = $("#particles");
-  if (pcanvas && !reduceMotion) {
-    const pctx = pcanvas.getContext("2d");
-    let W, H, DPR, parts = [];
-    const colors = ["rgba(169,217,245,", "rgba(245,230,202,", "rgba(185,168,240,"];
-    function presize() {
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = pcanvas.clientWidth; H = pcanvas.clientHeight;
-      pcanvas.width = W * DPR; pcanvas.height = H * DPR;
-      pctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-      const count = Math.max(24, Math.min(70, Math.round((W * H) / 26000)));
-      parts = Array.from({ length: count }, () => ({
-        x: Math.random() * W, y: Math.random() * H,
-        r: Math.random() * 2 + 0.6,
-        vx: (Math.random() - 0.5) * 0.18, vy: (Math.random() - 0.5) * 0.18,
-        a: Math.random() * 0.4 + 0.14,
-        c: colors[(Math.random() * colors.length) | 0]
-      }));
-    }
-    presize();
-    window.addEventListener("resize", presize);
-    (function drawP() {
-      pctx.clearRect(0, 0, W, H);
-      for (const p of parts) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < -5) p.x = W + 5; else if (p.x > W + 5) p.x = -5;
-        if (p.y < -5) p.y = H + 5; else if (p.y > H + 5) p.y = -5;
-        pctx.beginPath();
-        pctx.fillStyle = p.c + p.a + ")";
-        pctx.shadowBlur = 8; pctx.shadowColor = p.c + "0.5)";
-        pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        pctx.fill();
-      }
-      requestAnimationFrame(drawP);
-    })();
-  }
+  /* Fono dalelės (sprinkles) pašalintos */
 
   /* =======================================================
      BEFORE / AFTER — slankikliai showcase kortelėse
