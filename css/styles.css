@@ -1017,3 +1017,42 @@ body.menu-open .sm-socials-item:nth-child(3) .sm-socials-link{ opacity:1; transf
   width:100vw; z-index:-1; pointer-events:none;
   border-top:1px solid var(--glass-border-soft); border-bottom:1px solid var(--glass-border-soft);
 }
+
+/* =========================================================
+   MOBILE: video natūraliomis 9:16 proporcijomis (be tempimo)
+   Fiksuotas ekrane — hero turi savo foną, tad video matomas
+   nuo „Apie mane" sekcijos iki footerio.
+   ========================================================= */
+@media (max-width:960px){
+  .bg-video, .bg-video-overlay{ position:fixed; inset:0; height:100%; }
+}
+
+/* =========================================================
+   Šviesesni perdengimai + stipresnis glass, kad matytųsi fonai
+   ========================================================= */
+.services::before{
+  background:
+    linear-gradient(rgba(11,17,32,.48), rgba(11,17,32,.6) 58%, rgba(11,17,32,.72)),
+    url("../assets/img/services-bg.jpg") center 42% / cover no-repeat;
+}
+.booking::before{
+  background:
+    linear-gradient(rgba(11,17,32,.52), rgba(11,17,32,.64) 55%, rgba(11,17,32,.76)),
+    url("../assets/img/stylist-blowdry.jpg") center 22% / cover no-repeat;
+}
+
+/* Permatomesnės „glass" kortelės — matosi fono nuotrauka */
+.service{
+  background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  border-color:rgba(255,255,255,.18);
+}
+.service:hover{ background:linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.06)); }
+
+.booking__card{
+  background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+  backdrop-filter:blur(24px) saturate(150%);
+  -webkit-backdrop-filter:blur(24px) saturate(150%);
+  border-color:rgba(255,255,255,.18);
+}
