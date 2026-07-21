@@ -43,3 +43,35 @@
   const onChange = (e) => { if (e.matches && open) set(false); };
   if (mq.addEventListener) mq.addEventListener("change", onChange);
 })();
+
+/* =========================================================
+   Fono video — visada groja + parallax
+   ========================================================= */
+(function () {
+  "use strict";
+  const v = document.getElementById("bgVideo");
+  if (!v) return;
+
+  const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  v.addEventListener("canplay", tryPlay);
+  v.addEventListener("loadeddata", tryPlay);
+  v.addEventListener("pause", () => { if (!document.hidden) tryPlay(); });
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) tryPlay(); });
+  window.addEventListener("pageshow", tryPlay);
+  tryPlay();
+
+  // Parallax slenkant (ribotas, kad neatidengtų kraštų)
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const cap = window.innerHeight * 0.07;
+      const y = Math.min(window.scrollY * 0.08, cap);
+      v.style.transform = `translate3d(0, ${y}px, 0) scale(1.04)`;
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+})();

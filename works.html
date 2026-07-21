@@ -13,6 +13,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+  <div class="bg-video" aria-hidden="true">
+    <video id="bgVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/bg-poster.jpg">
+      <source src="assets/video/bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="bg-video-overlay" aria-hidden="true"></div>
+
   <div class="sea-life" aria-hidden="true">
     <span class="fish" style="top:18%; width:66px; --op:.14; animation-duration:38s; animation-delay:-6s;">
       <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>

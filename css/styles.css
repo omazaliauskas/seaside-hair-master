@@ -974,3 +974,34 @@ body.menu-open .sm-socials-item:nth-child(3) .sm-socials-link{ opacity:1; transf
   100%{ transform:translateY(-114vh) translateX(24px); opacity:0; }
 }
 @media (prefers-reduced-motion:reduce){ .sea-life{ display:none; } }
+
+/* =========================================================
+   FONO VIDEO — visos svetainės fonas su parallax
+   ========================================================= */
+.bg-video{ position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none; background:var(--bg-2); }
+.bg-video video{
+  position:absolute; top:-8%; left:0; width:100%; height:116%;
+  object-fit:cover; object-position:center; will-change:transform;
+}
+.bg-video-overlay{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1200px 800px at 50% 0%, rgba(15,23,42,.55), transparent 60%),
+    linear-gradient(180deg, rgba(15,23,42,.7), rgba(15,23,42,.82));
+}
+@media (prefers-reduced-motion:reduce){ .bg-video video{ transform:none !important; } }
+
+/* Services sekcijos fono nuotrauka */
+.services{ position:relative; }
+.services::before{
+  content:""; position:absolute; top:0; bottom:0; left:50%; transform:translateX(-50%);
+  width:100vw; z-index:-1;
+  background:
+    linear-gradient(rgba(11,17,32,.80), rgba(11,17,32,.88) 60%, rgba(11,17,32,.94)),
+    url("../assets/img/services-bg.jpg") center / cover no-repeat;
+}
+.services::after{
+  content:""; position:absolute; top:0; bottom:0; left:50%; transform:translateX(-50%);
+  width:100vw; z-index:-1; pointer-events:none;
+  border-top:1px solid var(--glass-border-soft); border-bottom:1px solid var(--glass-border-soft);
+}

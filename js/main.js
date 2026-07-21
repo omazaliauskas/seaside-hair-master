@@ -197,14 +197,12 @@
   };
 
   const listEl = $("#servicesList");
-  const thumb = $("#serviceThumb");
-  let curX = 0, curY = 0, thumbX = 0, thumbY = 0, thumbRAF = null;
 
   function renderServices(cat) {
     listEl.innerHTML = SERVICES[cat]
       .map(
         (s) => `
-      <article class="service" data-img="${s.img}">
+      <article class="service">
         <div class="service__main">
           <h3>${s.n}</h3>
           <p>${s.d}</p>
@@ -217,34 +215,17 @@
       )
       .join("");
 
+    // Subtilus 3D pakreipimas (be nuotraukų iššokimo)
     $$(".service", listEl).forEach((el) => {
-      const img = el.dataset.img;
       el.addEventListener("pointermove", (e) => {
         if (window.innerWidth < 720) return;
         const r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
         const py = (e.clientY - r.top) / r.height - 0.5;
         el.style.transform = `perspective(900px) rotateX(${py * -5}deg) rotateY(${px * 6}deg) translateY(-2px)`;
-        curX = e.clientX; curY = e.clientY;
       });
-      el.addEventListener("pointerenter", () => {
-        if (window.innerWidth < 720) return;
-        thumb.style.backgroundImage = `url('${img}')`;
-        thumb.classList.add("is-visible");
-        if (!thumbRAF) followThumb();
-      });
-      el.addEventListener("pointerleave", () => {
-        el.style.transform = "";
-        thumb.classList.remove("is-visible");
-      });
+      el.addEventListener("pointerleave", () => { el.style.transform = ""; });
     });
-  }
-  function followThumb() {
-    thumbX += (curX - thumbX) * 0.18;
-    thumbY += (curY - thumbY) * 0.18;
-    thumb.style.left = thumbX + "px";
-    thumb.style.top = thumbY + "px";
-    thumbRAF = thumb.classList.contains("is-visible") ? requestAnimationFrame(followThumb) : null;
   }
 
   $$(".tab").forEach((t) =>
