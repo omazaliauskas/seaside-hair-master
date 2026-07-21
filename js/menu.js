@@ -86,19 +86,5 @@
     if (v.classList.contains("is-active")) play(v);
   }));
 
-  // Parallax slenkant (ribotas, kad neatidengtų kraštų)
-  if (!reduce) {
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const cap = window.innerHeight * 0.07;
-      const y = Math.min(window.scrollY * 0.08, cap);
-      const tf = `translate3d(0, ${y}px, 0) scale(1.05)`;
-      layers.forEach((v) => { v.style.transform = tf; });
-    };
-    window.addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
-    update();
-  } else {
-    layers.forEach((v) => { v.style.transform = "scale(1.05)"; });
-  }
+  // Parallax nenaudojamas: video slenka kartu su puslapiu
 })();

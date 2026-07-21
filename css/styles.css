@@ -50,6 +50,7 @@ body{
     var(--bg);
   background-attachment:fixed;
   line-height:1.6;
+  position:relative;
   overflow-x:hidden;
   overflow-x:clip;
   -webkit-font-smoothing:antialiased;
@@ -557,11 +558,10 @@ button{ font-family:inherit; cursor:pointer; }
   .btn--nav{ display:none; }
   .hero{ min-height:90svh; padding-top:6rem; padding-bottom:3rem; text-align:center; }
   .hero__bg{
-    display:block; position:absolute; top:-14%; left:0; right:0; height:128%; z-index:0;
+    display:block; position:absolute; inset:0; z-index:0;
     background:
       linear-gradient(rgba(15,23,42,.38) 0%, rgba(15,23,42,.62) 42%, rgba(15,23,42,.9) 78%, rgba(15,23,42,.97)),
       url("../assets/img/ieva-portrait.jpg") center 20% / cover no-repeat;
-    will-change:transform;
   }
   .hero__grid{ grid-template-columns:1fr; gap:1.6rem; }
   .hero__left{ text-align:center; }
@@ -985,20 +985,18 @@ body.menu-open .sm-socials-item:nth-child(3) .sm-socials-link{ opacity:1; transf
 /* =========================================================
    FONO VIDEO — visos svetainės fonas su parallax
    ========================================================= */
-.bg-video{ position:fixed; top:0; left:0; width:100vw; height:100%; z-index:-2; overflow:hidden; pointer-events:none; background:var(--bg-2); }
+/* Video slenka kartu su puslapiu: viršus – hero, apačia – footeris */
+.bg-video{ position:absolute; inset:0; z-index:-2; overflow:hidden; pointer-events:none; background:var(--bg-2); }
 .bg-video__layer{
-  position:absolute; top:-8%; left:-2%; width:104%; height:116%;
+  position:absolute; inset:0; width:100%; height:100%;
   object-fit:cover; object-position:center; opacity:0;
-  transition:opacity .9s ease; will-change:transform,opacity;
+  transition:opacity .9s ease; will-change:opacity;
 }
 .bg-video__layer.is-active{ opacity:1; }
 .bg-video-overlay{
-  position:fixed; inset:0; z-index:-1; pointer-events:none;
-  background:
-    radial-gradient(1200px 800px at 50% 0%, rgba(15,23,42,.4), transparent 62%),
-    linear-gradient(180deg, rgba(15,23,42,.56), rgba(15,23,42,.72));
+  position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(15,23,42,.55), rgba(15,23,42,.62) 50%, rgba(15,23,42,.72));
 }
-@media (prefers-reduced-motion:reduce){ .bg-video__layer{ transform:none !important; } }
 
 /* Teksto įskaitomumas ant video */
 .hero__title, .hero__sub, .section__title, .section__lead, .eyebrow{
