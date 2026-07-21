@@ -49,29 +49,56 @@
    ========================================================= */
 (function () {
   "use strict";
-  const v = document.getElementById("bgVideo");
-  if (!v) return;
+  const layers = [document.getElementById("bgVideo"), document.getElementById("bgVideo2")].filter(Boolean);
+  if (!layers.length) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-  v.addEventListener("canplay", tryPlay);
-  v.addEventListener("loadeddata", tryPlay);
-  v.addEventListener("pause", () => { if (!document.hidden) tryPlay(); });
-  document.addEventListener("visibilitychange", () => { if (!document.hidden) tryPlay(); });
-  window.addEventListener("pageshow", tryPlay);
-  tryPlay();
+  const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+  const CROSS = 0.9; // sekundžių persiliejimas prieš pabaigą
+  let active = 0;
+
+  play(layers[0]);
+
+  if (layers.length < 2) {
+    layers[0].loop = true;
+  } else {
+    layers.forEach((v, idx) => {
+      v.addEventListener("timeupdate", () => {
+        if (idx !== active) return;
+        if (v.duration && v.currentTime >= v.duration - CROSS) {
+          const next = (active + 1) % layers.length;
+          const nv = layers[next];
+          try { nv.currentTime = 0; } catch (e) {}
+          play(nv);
+          nv.classList.add("is-active");   // persilieja (opacity transition)
+          v.classList.remove("is-active");
+          active = next;
+        }
+      });
+    });
+  }
+
+  // Visada groti (grįžus į skirtuką ir pan.)
+  const ensure = () => { if (!document.hidden) play(layers[active]); };
+  document.addEventListener("visibilitychange", ensure);
+  window.addEventListener("pageshow", ensure);
+  layers.forEach((v) => v.addEventListener("canplay", () => {
+    if (v.classList.contains("is-active")) play(v);
+  }));
 
   // Parallax slenkant (ribotas, kad neatidengtų kraštų)
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!reduce) {
     let ticking = false;
     const update = () => {
       ticking = false;
       const cap = window.innerHeight * 0.07;
       const y = Math.min(window.scrollY * 0.08, cap);
-      v.style.transform = `translate3d(0, ${y}px, 0) scale(1.04)`;
+      const tf = `translate3d(0, ${y}px, 0) scale(1.05)`;
+      layers.forEach((v) => { v.style.transform = tf; });
     };
-    window.addEventListener("scroll", () => {
-      if (!ticking) { requestAnimationFrame(update); ticking = true; }
-    }, { passive: true });
+    window.addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
     update();
+  } else {
+    layers.forEach((v) => { v.style.transform = "scale(1.05)"; });
   }
 })();

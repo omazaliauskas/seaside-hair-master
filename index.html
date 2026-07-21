@@ -22,38 +22,16 @@
 <body>
   <!-- ============ FONO VIDEO (visos svetainės fonas) ============ -->
   <div class="bg-video" aria-hidden="true">
-    <video id="bgVideo" autoplay muted loop playsinline preload="auto" poster="assets/video/bg-poster.jpg">
+    <video class="bg-video__layer is-active" id="bgVideo" muted playsinline preload="auto" poster="assets/video/bg-poster.jpg">
+      <source src="assets/video/bg.mp4" type="video/mp4" />
+    </video>
+    <video class="bg-video__layer" id="bgVideo2" muted playsinline preload="auto">
       <source src="assets/video/bg.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="bg-video-overlay" aria-hidden="true"></div>
 
   <canvas class="particles" id="particles" aria-hidden="true"></canvas>
-
-  <!-- ============ SEA LIFE (jūros tema) ============ -->
-  <div class="sea-life" aria-hidden="true">
-    <span class="fish" style="top:16%; width:72px; --op:.16; animation-duration:36s; animation-delay:-5s;">
-      <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>
-    </span>
-    <span class="fish fish--rev" style="top:40%; width:48px; --op:.13; color:var(--gold); animation-duration:48s; animation-delay:-20s;">
-      <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>
-    </span>
-    <span class="fish" style="top:64%; width:94px; --op:.10; animation-duration:54s; animation-delay:-32s;">
-      <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>
-    </span>
-    <span class="fish fish--rev" style="top:78%; width:56px; --op:.14; color:var(--teal); animation-duration:42s; animation-delay:-12s;">
-      <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>
-    </span>
-    <span class="fish" style="top:30%; width:40px; --op:.12; color:var(--gold); animation-duration:62s; animation-delay:-48s;">
-      <svg viewBox="0 0 72 36"><path class="body" d="M4 18C16 4 44 4 54 18 44 32 16 32 4 18Z"/><path class="body" d="M54 18 70 8 66 18 70 28Z"/><circle class="eye" cx="18" cy="15" r="2"/></svg>
-    </span>
-    <span class="bubble" style="left:10%; width:9px; height:9px; animation-duration:17s; animation-delay:-2s;"></span>
-    <span class="bubble" style="left:26%; width:14px; height:14px; animation-duration:22s; animation-delay:-9s;"></span>
-    <span class="bubble" style="left:48%; width:7px; height:7px; animation-duration:15s; animation-delay:-5s;"></span>
-    <span class="bubble" style="left:68%; width:12px; height:12px; animation-duration:20s; animation-delay:-13s;"></span>
-    <span class="bubble" style="left:84%; width:8px; height:8px; animation-duration:18s; animation-delay:-7s;"></span>
-    <span class="bubble" style="left:92%; width:15px; height:15px; animation-duration:24s; animation-delay:-16s;"></span>
-  </div>
   <div class="page-noise" aria-hidden="true"></div>
 
   <!-- ============ NAVIGATION ============ -->
